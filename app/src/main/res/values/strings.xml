@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Movie Catalogue UIUX</string>
     <string name="title_movie">Movie</string>
-    <string name="title_tv_show">TvShow</string>
-    <string name="movie">Selamat datang di halaman Movie</string>
-    <string name="tvShow">Selamat datang di halaman Tv Show</string>
+    <string name="title_tv_show">Tv Show</string>
+    <string name="movie_des">Description</string>
+    <string name="desc_tvshow">DescTvShow</string>
 </resources>

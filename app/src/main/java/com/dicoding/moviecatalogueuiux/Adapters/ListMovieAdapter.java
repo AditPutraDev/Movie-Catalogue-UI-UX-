@@ -18,6 +18,11 @@ import java.util.ArrayList;
 
 public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.CategoryViewHolder> {
     private Context context;
+    private OnItemClickListener mListener;
+
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+    }
 
     public ArrayList<Movie> getListMovie() {
         return listMovie;

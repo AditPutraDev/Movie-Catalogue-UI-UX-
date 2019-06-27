@@ -7,7 +7,7 @@
     android:padding="10dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/image_poster"
+        android:id="@+id/image_poster_tvshow"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
@@ -17,25 +17,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/image_poster"
-        android:layout_toRightOf="@+id/image_poster"
+        android:layout_toEndOf="@+id/image_poster_tvshow"
+        android:layout_toRightOf="@+id/image_poster_tvshow"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_item_titlem"
+            android:id="@+id/tv_item_title_tvshow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:textSize="16sp"
             android:textStyle="bold"
-            tools:text="@string/title_movie" />
+            tools:text="Sate" />
 
         <TextView
-            android:id="@+id/tv_item_descm"
+            android:id="@+id/tv_item_desc_tvshow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="3"
-            tools:text="@string/movie_des" />
+            tools:text="@string/desc_tvshow" />
     </LinearLayout>
+
 </RelativeLayout>
