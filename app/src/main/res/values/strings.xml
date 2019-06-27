@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Movie Catalogue UIUX</string>
+    <string name="title_movie">Movie</string>
+    <string name="title_tv_show">TvShow</string>
+    <string name="movie">Selamat datang di halaman Movie</string>
+    <string name="tvShow">Selamat datang di halaman Tv Show</string>
+</resources>
