@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -46,13 +47,19 @@ public class ListTvShowAdapter extends RecyclerView.Adapter<ListTvShowAdapter.Ca
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CategoryViewHolder holder, final int position) {
         holder.tvTitleTV.setText(getListTvShow().get(position).getTitle());
         holder.tvDescTV.setText(getListTvShow().get(position).getDescription());
         Glide.with(context)
                 .load(getListTvShow().get(position).getPoster())
                 .apply(new RequestOptions().override(55, 55))
                 .into(holder.imageTV);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "Ini item favorite ku " + getListTvShow().get(position).getTitle(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

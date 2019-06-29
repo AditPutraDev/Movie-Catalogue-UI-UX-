@@ -1,0 +1,10 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Katalog Film</string>
+    <string name="title_movie">Film</string>
+    <string name="title_tv_show">Acara TV</string>
+    <string name="movie_des">Description</string>
+    <string name="desc_tvshow">DescTvShow</string>
+    <string name="movie_poster">Movie Poster</string>
+
+    <string name="change_language_settings">Ubah Pengaturan Bahasa</string>
+</resources>

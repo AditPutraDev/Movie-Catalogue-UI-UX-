@@ -6,14 +6,5 @@
     <string name="desc_tvshow">DescTvShow</string>
     <string name="movie_poster">Movie Poster</string>
 
-    <!--<plurals name="numberOfSongsAvailable">-->
-        <!--<item quantity="one">%d song found.</item>-->
-        <!--<item quantity="other">%d songs found.</item>-->
-    <!--</plurals>-->
-
-    <!--<string name="app_homeurl">-->
-        <!--Visit us at <xliff:g id="application_homepage">https://dicoding.com</xliff:g>-->
-    <!--</string>-->
-
     <string name="change_language_settings">Change Language Settings</string>
 </resources>

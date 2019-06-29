@@ -1,6 +1,7 @@
 package com.dicoding.moviecatalogueuiux.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,9 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.dicoding.moviecatalogueuiux.Activities.MDetailActivity;
 import com.dicoding.moviecatalogueuiux.Models.Movie;
 import com.dicoding.moviecatalogueuiux.R;
 
@@ -20,7 +23,7 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.Cate
     private Context context;
     private OnItemClickListener mListener;
 
-    public interface OnItemClickListener{
+    public interface OnItemClickListener {
         void onItemClick(int position);
     }
 
@@ -47,13 +50,23 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.Cate
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CategoryViewHolder holder, final int position) {
         holder.tvTitle.setText(getListMovie().get(position).getTitle());
-        holder.tvDesc.setText(getListMovie().get(position).getDescription());
+        holder.tvDesc.setText(getListMovie().get(position).getDescription()
+        );
         Glide.with(context)
                 .load(getListMovie().get(position).getPoster())
                 .apply(new RequestOptions().override(55, 55))
                 .into(holder.imgPoster);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "" + getListMovie().get(position).getTitle(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, MDetailActivity.class);
+                intent.putExtra(MDetailActivity.EXTRA_MOVIE, position);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -71,6 +84,18 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.Cate
             tvTitle = itemView.findViewById(R.id.tv_item_titlem);
             tvDesc = itemView.findViewById(R.id.tv_item_descm);
             imgPoster = itemView.findViewById(R.id.image_poster);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (mListener != null) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 }
