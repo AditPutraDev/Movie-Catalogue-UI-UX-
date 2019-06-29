@@ -19,7 +19,6 @@ public class MDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mdetail);
 
         Movie movie = getIntent().getParcelableExtra(EXTRA_MOVIE);
-        if (movie != null) {
             TextView txtTitle = findViewById(R.id.txt_title);
             txtTitle.setText(movie.getTitle());
             TextView txtDesc = findViewById(R.id.txt_description);
@@ -29,6 +28,6 @@ public class MDetailActivity extends AppCompatActivity {
                     .load(movie)
                     .apply(new RequestOptions().override(55, 55))
                     .into(imgView);
-        }
+
     }
 }

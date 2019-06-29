@@ -63,7 +63,7 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.Cate
             public void onClick(View v) {
                 Toast.makeText(context, "" + getListMovie().get(position).getTitle(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, MDetailActivity.class);
-                intent.putExtra(MDetailActivity.EXTRA_MOVIE, position);
+                intent.putParcelableArrayListExtra("extra_movie", getListMovie());
                 context.startActivity(intent);
             }
         });
