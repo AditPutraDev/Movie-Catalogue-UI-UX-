@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.dicoding.moviecatalogueuiux.Activities.MDetailActivity;
-import com.dicoding.moviecatalogueuiux.Models.Movie;
+import com.dicoding.moviecatalogueuiux.Data.Movie;
 import com.dicoding.moviecatalogueuiux.R;
 
 import java.util.ArrayList;
@@ -45,15 +45,14 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.Cate
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_row_movie, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_movie, viewGroup, false);
         return new CategoryViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, final int position) {
         holder.tvTitle.setText(getListMovie().get(position).getTitle());
-        holder.tvDesc.setText(getListMovie().get(position).getDescription()
-        );
+        holder.tvDesc.setText(getListMovie().get(position).getDescription());
         Glide.with(context)
                 .load(getListMovie().get(position).getPoster())
                 .apply(new RequestOptions().override(55, 55))

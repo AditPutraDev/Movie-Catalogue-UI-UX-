@@ -1,9 +1,9 @@
-package com.dicoding.moviecatalogueuiux.Models;
+package com.dicoding.moviecatalogueuiux.Data;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Movie implements Parcelable {
+public class TvShow implements Parcelable {
     private String title;
     private String description;
     private String poster;
@@ -45,25 +45,24 @@ public class Movie implements Parcelable {
         dest.writeString(poster);
     }
 
-    public Movie() {
+    public TvShow() {
     }
 
-    protected Movie(Parcel in) {
+    protected TvShow(Parcel in) {
         title = in.readString();
         description = in.readString();
         poster = in.readString();
     }
 
-    public static final Creator<Movie> CREATOR = new Creator<Movie>() {
+    public static final Creator<TvShow> CREATOR = new Creator<TvShow>() {
         @Override
-        public Movie createFromParcel(Parcel in) {
-            return new Movie(in);
+        public TvShow createFromParcel(Parcel in) {
+            return new TvShow(in);
         }
 
-
         @Override
-        public Movie[] newArray(int size) {
-            return new Movie[size];
+        public TvShow[] newArray(int size) {
+            return new TvShow[size];
         }
     };
 }

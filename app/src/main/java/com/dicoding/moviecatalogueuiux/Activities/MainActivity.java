@@ -7,17 +7,12 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.dicoding.moviecatalogueuiux.Fragments.MovieFragment;
 import com.dicoding.moviecatalogueuiux.Fragments.TvShowFragment;
-import com.dicoding.moviecatalogueuiux.Models.Movie;
 import com.dicoding.moviecatalogueuiux.R;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
             navView.setSelectedItemId(R.id.navigation_movie);
         }
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

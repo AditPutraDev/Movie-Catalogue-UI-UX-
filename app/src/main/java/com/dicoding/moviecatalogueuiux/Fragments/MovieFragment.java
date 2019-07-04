@@ -1,7 +1,6 @@
 package com.dicoding.moviecatalogueuiux.Fragments;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,13 +10,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.dicoding.moviecatalogueuiux.Activities.MDetailActivity;
 import com.dicoding.moviecatalogueuiux.Adapters.ListMovieAdapter;
-import com.dicoding.moviecatalogueuiux.ItemClickSupport;
-import com.dicoding.moviecatalogueuiux.Models.Movie;
-import com.dicoding.moviecatalogueuiux.Models.MovieData;
+import com.dicoding.moviecatalogueuiux.Data.Movie;
+import com.dicoding.moviecatalogueuiux.Data.MovieData;
 import com.dicoding.moviecatalogueuiux.R;
 
 import java.util.ArrayList;
@@ -48,7 +44,7 @@ public class MovieFragment extends Fragment implements ListMovieAdapter.OnItemCl
         super.onViewCreated(view, savedInstanceState);
         rvMovie = view.findViewById(R.id.rv_movie);
         rvMovie.setHasFixedSize(true);
-        listItemMovie.addAll(MovieData.getListDataMov());
+        listItemMovie.addAll(MovieData.getListMovies());
         showRecyclerList();
     }
 

@@ -1,4 +1,4 @@
-package com.dicoding.moviecatalogueuiux.Models;
+package com.dicoding.moviecatalogueuiux.Data;
 
 import java.util.ArrayList;
 

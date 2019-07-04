@@ -12,8 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.dicoding.moviecatalogueuiux.Adapters.ListTvShowAdapter;
-import com.dicoding.moviecatalogueuiux.Models.TvShow;
-import com.dicoding.moviecatalogueuiux.Models.TvShowData;
+import com.dicoding.moviecatalogueuiux.Data.TvShow;
+import com.dicoding.moviecatalogueuiux.Data.TvShowData;
 import com.dicoding.moviecatalogueuiux.R;
 
 import java.util.ArrayList;

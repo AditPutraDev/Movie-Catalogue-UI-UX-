@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.dicoding.moviecatalogueuiux.Models.TvShow;
+import com.dicoding.moviecatalogueuiux.Data.TvShow;
 import com.dicoding.moviecatalogueuiux.R;
 
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class ListTvShowAdapter extends RecyclerView.Adapter<ListTvShowAdapter.Ca
     @NonNull
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_row_tvshow, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_tvshow, viewGroup, false);
         return new ListTvShowAdapter.CategoryViewHolder(view);
     }
 
