@@ -6,7 +6,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.dicoding.moviecatalogueuiux.Data.Movie;
 import com.dicoding.moviecatalogueuiux.R;
 
@@ -28,8 +27,7 @@ public class MDetailActivity extends AppCompatActivity {
             txtTitle.setText(movie.getTitle());
             txtDescription.setText(movie.getDescription());
             Glide.with(this)
-                    .load(imgPoster)
-                    .apply(new RequestOptions().override(55, 55))
+                    .load(movie.getPoster())
                     .into(imgPoster);
         }
     }

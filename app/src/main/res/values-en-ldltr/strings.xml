@@ -4,7 +4,6 @@
     <string name="title_tv_show">TV Show</string>
     <string name="movie_des">Description</string>
     <string name="desc_tvshow">DescTvShow</string>
-    <string name="movie_poster">Movie Poster</string>
 
     <string name="change_language_settings">Change Language Settings</string>
 </resources>

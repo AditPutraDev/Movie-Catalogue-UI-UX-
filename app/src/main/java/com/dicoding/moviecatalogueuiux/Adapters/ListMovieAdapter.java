@@ -9,10 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.dicoding.moviecatalogueuiux.Activities.MDetailActivity;
 import com.dicoding.moviecatalogueuiux.Data.Movie;
 import com.dicoding.moviecatalogueuiux.R;
@@ -21,7 +19,7 @@ import java.util.ArrayList;
 
 public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.CategoryViewHolder> {
     private Context context;
-    private OnItemClickListener mListener;
+    public OnItemClickListener mListener;
 
     public interface OnItemClickListener {
         void onItemClick(int position);
@@ -55,14 +53,13 @@ public class ListMovieAdapter extends RecyclerView.Adapter<ListMovieAdapter.Cate
         holder.tvDesc.setText(getListMovie().get(position).getDescription());
         Glide.with(context)
                 .load(getListMovie().get(position).getPoster())
-                .apply(new RequestOptions().override(55, 55))
                 .into(holder.imgPoster);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "" + getListMovie().get(position).getTitle(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, MDetailActivity.class);
                 intent.putParcelableArrayListExtra("extra_movie", getListMovie());
+                intent.putExtra("extra_movie", getListMovie().get(position));
                 context.startActivity(intent);
             }
         });
